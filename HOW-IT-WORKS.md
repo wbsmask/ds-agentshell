@@ -1,7 +1,7 @@
 # 如何把 DeepSeek Harness 网页版做成桌面应用
 
 > 一份实现方法说明。目标读者：想复刻「把 `dsh web` 变成桌面 App」这件事的开发者。
-> 本文讲的是**思路和关键难点**，完整工程在 `dsh-desktop/` 目录里。
+> 本文讲的是**思路和关键难点**，完整工程在 `ds-agentshell/` 目录里。
 
 ---
 
@@ -191,7 +191,7 @@ ELECTRON_BUILDER_BINARIES_MIRROR="https://npmmirror.com/mirrors/electron-builder
 ```jsonc
 // package.json 的 build 字段
 {
-  "files": ["electron/**/*", "renderer/**/*", "assets/**/*", "dsh-desktop.config.json", "package.json"],
+  "files": ["electron/**/*", "renderer/**/*", "assets/**/*", "ds-agentshell.config.json", "package.json"],
   "extraResources": [{ "from": "backend", "to": "backend" }],  // 内嵌后端放到 resources/backend
   "win": { "target": ["nsis"], "icon": "assets/icon.png", "signAndEditExecutable": false },
   "nsis": { "oneClick": false, "createDesktopShortcut": true }

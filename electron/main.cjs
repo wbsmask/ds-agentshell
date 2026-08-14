@@ -16,7 +16,7 @@ if (!gotLock) {
 }
 
 function run() {
-  app.setAppUserModelId('ai.deepseek.dsh.desktop')
+  app.setAppUserModelId('com.ds-agentshell.desktop')
 
   let mainWindow = null
   let backendChild = null // non-null only when THIS instance spawned the backend
@@ -43,7 +43,7 @@ function run() {
       height: 840,
       minWidth: 900,
       minHeight: 560,
-      title: 'DeepSeek Harness',
+      title: 'DS-AgentShell',
       backgroundColor: '#0f1115',
       icon: iconPath,
       autoHideMenuBar: true,
@@ -81,9 +81,9 @@ function run() {
   function fail(message) {
     dialog.showMessageBox(mainWindow ?? undefined, {
       type: 'error',
-      title: 'DeepSeek Harness',
-      message: 'DeepSeek Harness 启动失败',
-      detail: `${message}\n\n日志: ${logFile}\n可通过编辑 dsh-desktop.config.json（位于安装目录）修改 checkout 路径与端口。`,
+      title: 'DS-AgentShell',
+      message: 'DS-AgentShell 启动失败',
+      detail: `${message}\n\n日志: ${logFile}\n可通过编辑 ds-agentshell.config.json（位于安装目录）修改 checkout 路径与端口。`,
       buttons: ['退出'],
     })
     app.quit()
@@ -100,7 +100,7 @@ function run() {
         return
       }
     } else if (cfg.checkout && !fs.existsSync(cfg.checkout)) {
-      fail(`未找到源码仓库 checkout 目录:\n${cfg.checkout}\n\n请在 dsh-desktop.config.json 中修改 checkout 路径。`)
+      fail(`未找到源码仓库 checkout 目录:\n${cfg.checkout}\n\n请在 ds-agentshell.config.json 中修改 checkout 路径。`)
       return
     }
 

@@ -1,8 +1,8 @@
 {
-  "name": "dsh-desktop",
+  "name": "ds-agentshell",
   "version": "0.2.0",
-  "description": "DeepSeek Harness desktop app: bundles the dsh web backend and shows the web UI in a native window.",
-  "author": "DSH Desktop",
+  "description": "DS-AgentShell: an unofficial Electron desktop wrapper for DeepSeek Harness (bundles the dsh web backend).",
+  "author": "DS-AgentShell",
   "license": "MIT",
   "private": true,
   "main": "electron/main.cjs",
@@ -18,8 +18,8 @@
     "@resvg/resvg-js": "^2.6.0"
   },
   "build": {
-    "appId": "ai.deepseek.dsh.desktop",
-    "productName": "DeepSeek Harness",
+    "appId": "com.ds-agentshell.desktop",
+    "productName": "DS-AgentShell",
     "copyright": "MIT",
     "asar": true,
     "directories": {
@@ -29,7 +29,7 @@
       "electron/**/*",
       "renderer/**/*",
       "assets/**/*",
-      "dsh-desktop.config.json",
+      "ds-agentshell.config.json",
       "package.json"
     ],
     "extraResources": [
@@ -54,8 +54,8 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "DeepSeek Harness",
-      "artifactName": "DeepSeek-Harness-Setup-${version}.${ext}"
+      "shortcutName": "DS-AgentShell",
+      "artifactName": "DS-AgentShell-Setup-${version}.${ext}"
     }
   }
 }

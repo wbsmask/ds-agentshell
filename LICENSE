@@ -42,8 +42,8 @@ and `pnpm-lock.yaml` (upstream: deepseek-harness).
 
 ## Trademarks
 
-This project is an independent, unofficial, community-made desktop client for
-DeepSeek Harness. It is **not affiliated with, endorsed by, or sponsored by
-DeepSeek**. The name "DeepSeek Harness" and any DeepSeek marks are used only to
+**DS-AgentShell** is an independent, unofficial, community-made desktop client
+for DeepSeek Harness. It is **not affiliated with, endorsed by, or sponsored by
+DeepSeek**. The DeepSeek Harness name and any DeepSeek marks are used only to
 describe compatibility. The application icon is an original design and does not
 reproduce any third-party logo or trademark.

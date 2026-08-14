@@ -42,9 +42,9 @@ exports.default = async function afterPack(context) {
   const args = [
     exe,
     '--set-icon', ico,
-    '--set-version-string', 'FileDescription', 'DeepSeek Harness',
+    '--set-version-string', 'FileDescription', 'DS-AgentShell',
     '--set-version-string', 'ProductName', productName,
-    '--set-version-string', 'CompanyName', 'DeepSeek',
+    '--set-version-string', 'CompanyName', 'DS-AgentShell',
     '--set-version-string', 'OriginalFilename', `${productName}.exe`,
     '--set-file-version', version,
     '--set-product-version', version,

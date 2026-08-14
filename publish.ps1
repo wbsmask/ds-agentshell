@@ -1,13 +1,13 @@
 # 一键发布到 GitHub：创建公开仓库 + 推送代码 + 发 Release 上传安装包
-# 用法：在 dsh-desktop 目录打开 PowerShell，执行  .\publish.ps1
+# 用法：在 ds-agentshell 目录打开 PowerShell，执行  .\publish.ps1
 
 param(
-  [string]$RepoName = "dsh-desktop",
+  [string]$RepoName = "ds-agentshell",
   [string]$Version = "0.2.0"
 )
 
 $ErrorActionPreference = "Stop"
-$ExePath = "release\DeepSeek-Harness-Setup-$Version.exe"
+$ExePath = "release\DS-AgentShell-Setup-$Version.exe"
 
 Write-Host "=== 1. 检查 GitHub CLI ===" -ForegroundColor Cyan
 if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {

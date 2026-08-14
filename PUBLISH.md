@@ -16,26 +16,26 @@
 ## 第一步：在 GitHub 上建空仓库
 
 1. 打开 https://github.com/new
-2. **Repository name** 填：`dsh-desktop`
+2. **Repository name** 填：`ds-agentshell`
 3. 选 **Public**（公开）
 4. **不要**勾选 "Add a README / .gitignore / license"（本目录已带这些文件，勾了会冲突）
 5. 点 **Create repository**
-6. 记下仓库地址，形如：`git@github.com:WbsMusk/dsh-desktop.git`
+6. 记下仓库地址，形如：`git@github.com:WbsMusk/ds-agentshell.git`
 
 ---
 
 ## 第二步：本地提交并推送
 
-在本目录（`dsh-desktop/`）打开终端，执行：
+在本目录（`ds-agentshell/`）打开终端，执行：
 
 ```sh
 # 1. 初始化仓库并提交
 git init
 git add .
-git commit -m "feat: DeepSeek Harness 非官方桌面客户端（自包含）"
+git commit -m "feat: DS-AgentShell 非官方桌面客户端（自包含）"
 
 # 2. 关联远程（把下面地址换成你第一步记下的）
-git remote add origin git@github.com:WbsMusk/dsh-desktop.git
+git remote add origin git@github.com:WbsMusk/ds-agentshell.git
 
 # 3. 推送
 git branch -M main
@@ -43,7 +43,7 @@ git push -u origin main
 ```
 
 > 如果提示 SSH 权限错误（permission denied），说明公钥没配到 GitHub，
-> 改用 HTTPS + token：`git remote add origin https://github.com/WbsMusk/dsh-desktop.git`，
+> 改用 HTTPS + token：`git remote add origin https://github.com/WbsMusk/ds-agentshell.git`，
 > push 时输入用户名 + Personal Access Token（GitHub → Settings → Developer settings → Personal access tokens）。
 
 ---
@@ -54,7 +54,7 @@ git push -u origin main
 2. **Tag**：填 `v0.2.0`，点 "Create new tag"
 3. **Title**：`v0.2.0 首个可分发版本`
 4. **描述**：粘贴 `RELEASE_NOTES.md` 的内容
-5. **Attach binaries**：上传 `release/DeepSeek-Harness-Setup-0.2.0.exe`
+5. **Attach binaries**：上传 `release/DS-AgentShell-Setup-0.2.0.exe`
 6. 点 **Publish release**
 
 完成后，别人就能在 Release 页下载安装包了。

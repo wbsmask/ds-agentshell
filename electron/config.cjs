@@ -7,9 +7,9 @@ const fs = require('node:fs')
  * Resolve the desktop shell's runtime configuration.
  *
  * Priority (highest first):
- *   1. Environment: DSH_DESKTOP_PORT, DSH_DESKTOP_CHECKOUT,
- *      DSH_DESKTOP_COMMAND, DSH_DESKTOP_ARGS (JSON array).
- *   2. A `dsh-desktop.config.json` next to the running app:
+ *   1. Environment: DS_AGENTSHELL_PORT, DS_AGENTSHELL_CHECKOUT,
+ *      DS_AGENTSHELL_COMMAND, DS_AGENTSHELL_ARGS (JSON array).
+ *   2. A `ds-agentshell.config.json` next to the running app:
  *        packaged  -> beside the .exe (path.dirname(process.execPath))
  *        dev       -> the app root (app.getAppPath())
  *   3. Built-in defaults below.
@@ -36,7 +36,7 @@ function configFilePaths(appPath, execPath) {
     dirs.push(path.dirname(execPath))
   }
   if (appPath) dirs.push(appPath)
-  return dirs.map((dir) => path.join(dir, 'dsh-desktop.config.json'))
+  return dirs.map((dir) => path.join(dir, 'ds-agentshell.config.json'))
 }
 
 function readJsonFile(file) {
@@ -66,15 +66,15 @@ function loadConfig(appPath, execPath) {
   if (configFile) Object.assign(cfg, readJsonFile(configFile))
 
   const env = process.env
-  if (env.DSH_DESKTOP_CHECKOUT) cfg.checkout = env.DSH_DESKTOP_CHECKOUT
-  if (env.DSH_DESKTOP_PORT) {
-    const p = Number.parseInt(env.DSH_DESKTOP_PORT, 10)
+  if (env.DS_AGENTSHELL_CHECKOUT) cfg.checkout = env.DS_AGENTSHELL_CHECKOUT
+  if (env.DS_AGENTSHELL_PORT) {
+    const p = Number.parseInt(env.DS_AGENTSHELL_PORT, 10)
     if (Number.isFinite(p)) cfg.port = p
   }
-  if (env.DSH_DESKTOP_COMMAND) cfg.command = env.DSH_DESKTOP_COMMAND
-  if (env.DSH_DESKTOP_ARGS) {
+  if (env.DS_AGENTSHELL_COMMAND) cfg.command = env.DS_AGENTSHELL_COMMAND
+  if (env.DS_AGENTSHELL_ARGS) {
     try {
-      const args = JSON.parse(env.DSH_DESKTOP_ARGS)
+      const args = JSON.parse(env.DS_AGENTSHELL_ARGS)
       if (Array.isArray(args)) cfg.args = args.map(String)
     } catch {
       /* ignore malformed env */

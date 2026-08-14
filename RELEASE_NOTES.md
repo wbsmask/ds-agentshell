@@ -12,7 +12,7 @@
 
 ## 下载
 
-- `DeepSeek-Harness-Setup-2.0.exe` —— Windows 安装包（推荐）。
+- `DS-AgentShell-Setup-2.0.exe` —— Windows 安装包（推荐）。
 
 ## 已知说明
 
