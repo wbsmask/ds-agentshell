@@ -12,7 +12,7 @@
 
 ## 下载
 
-- `DeepSeek-Harness-Setup-0.2.0.exe` —— Windows 安装包（推荐）。
+- `DeepSeek-Harness-Setup-2.0.exe` —— Windows 安装包（推荐）。
 
 ## 已知说明
 
@@ -21,7 +21,7 @@
 
 ## 校验
 
-（可选）SHA-256：
+SHA-256：
 ```
-
+E33112F8879DF5542EEE2EC87EDE520EB313AAA7C41BE6A325030F2D540E8A4E
 ```
