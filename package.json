@@ -1,0 +1,61 @@
+{
+  "name": "dsh-desktop",
+  "version": "0.2.0",
+  "description": "DeepSeek Harness desktop app: bundles the dsh web backend and shows the web UI in a native window.",
+  "author": "DSH Desktop",
+  "license": "MIT",
+  "private": true,
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "gen-icon": "node scripts/gen-original-icon.cjs",
+    "dist": "electron-builder --win",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
+    "@resvg/resvg-js": "^2.6.0"
+  },
+  "build": {
+    "appId": "ai.deepseek.dsh.desktop",
+    "productName": "DeepSeek Harness",
+    "copyright": "MIT",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron/**/*",
+      "renderer/**/*",
+      "assets/**/*",
+      "dsh-desktop.config.json",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "backend",
+        "to": "backend"
+      }
+    ],
+    "afterPack": "scripts/after-pack.cjs",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.png",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DeepSeek Harness",
+      "artifactName": "DeepSeek-Harness-Setup-${version}.${ext}"
+    }
+  }
+}
